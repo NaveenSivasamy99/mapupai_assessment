@@ -1,0 +1,41 @@
+name: Build and Push Docker Image to ECR
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+env:
+  AWS_DEFAULT_REGION: eu-north-1
+  ECR_REGISTRY: public.ecr.aws/registry-alias/openai_assessment-repo
+  IMAGE_NAME: sampleimage
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Login to AWS ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+        with:
+          registry: ${{ env.ECR_REGISTRY }}
+          region: ${{ env.AWS_DEFAULT_REGION }}
+
+      - name: Build Docker image
+        run: |
+          docker build -t ${{ env.IMAGE_NAME }} .
+      
+      - name: Tag Docker image
+        run: |
+          docker tag ${{ env.IMAGE_NAME }} ${{ env.ECR_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+
+      - name: Push Docker image to ECR
+        run: |
+          docker push ${{ env.ECR_REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
