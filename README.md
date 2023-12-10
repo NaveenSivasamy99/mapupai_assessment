@@ -6,7 +6,7 @@
 
 3: Created an AWS ECR repository to store Docker images.
 
-4: Developed a GitHub Actions workflow that triggers on push or pull request events.
+4: Developed a GitHub Actions workflow that triggers on push or pull request events.( this will build image based on pull and push request and store the image in AWS ECR)
 
 5: Provide the artifacts and link on the given google form.
 
