@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  AWS_DEFAULT_REGION: eu-north-1
+  AWS_DEFAULT_REGION: public.ecr.aws
   ECR_REGISTRY: public.ecr.aws/registry-alias/openai_assessment-repo
   IMAGE_NAME: sampleimage
 
