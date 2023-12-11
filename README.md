@@ -1,15 +1,25 @@
 # openai_assessment
 
-1: Initialize a GitHub repository with a sample application.
+1: Initialize a GitHub repository with a sample hello world application.
 
-2: Writen a Dockerfile that builds a Docker image for the application.
+2: The repo contains app.py(python code file for the hello world Application).
 
-3: Created an AWS ECR repository to store Docker images.
+3: And then requirements.txt (file which required module for the app.py).
 
-4: Developed a GitHub Actions workflow that triggers on push or pull request events.( this will build image based on pull and push request and store the image in AWS ECR)
+4: Writen a Dockerfile that builds a Docker image for the hello world application.
 
-5: Provide the artifacts and link on the given google form.
+5: Configured GitHub Actions to build and store image based on push/pull request s per the requirement.
 
-6: Kindly review and ket us know about the further process.
+6: Created an AWS ECR private repository to store Docker images.
 
-7: looking forward to hear back from you. :)
+7: Creted AWS IAM user along with the permission "AmazonEC2ContainerRegistryFullAccess" for the programatic login to AWS account.
+
+8: Added the repository secrets on GitHub repo to utilize those access key Id and Key secret on the secure way.
+
+9: Commit changes to the repo to check the github action workflow.
+
+#Looking forword to hear back from you.
+
+Thanks
+Naveen Sivasamy
+7867889805
