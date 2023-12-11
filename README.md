@@ -18,7 +18,7 @@
 
 9: Commit changes to the repo to check the github action workflow.
 
-#Looking forword to hear back from you.
+**Looking forword to hear back from you.**
 
 Thanks
 Naveen Sivasamy
